@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nicola Fantino — Portfolio</title>
+<meta name="description" content="Portfolio di Nicola Fantino: progetti di Computer Graphics, VR e Game Dev con video dimostrativi YouTube." />
+<meta property="og:title" content="Nicola Fantino — Portfolio" />
+<meta property="og:description" content="Progetti di Computer Graphics, VR e Game Dev con video YouTube." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<link rel="icon" href="favicon.ico" />
+<style>
+:root{
+--bg: #0b0d10; --fg: #e9eef5; --muted:#9fb0c3; --card:#12161b; --accent:#7aa2ff; --accent-2:#86efac; --ring:#2b3440;
+--radius: 16px;
+}
+@media (prefers-color-scheme: light){
+:root{ --bg:#f7f9fc; --fg:#0e141b; --muted:#4a5a6d; --card:#ffffff; --accent:#1f63ff; --accent-2:#059669; --ring:#dfe7f1; }
+}
+*{ box-sizing: border-box }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+a{ color: var(--accent); text-decoration: none }
+a:hover{ text-decoration: underline }
+.wrap{ max-width: 1080px; padding: 24px; margin: 0 auto }
+
+
+header{ display:grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; margin: 24px 0 12px }
+.title{ font-weight: 800; letter-spacing: .2px; font-size: clamp(28px,4vw,40px) }
+.subtitle{ color: var(--muted); margin-top: 4px }
+.chip{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:var(--card); border:1px solid var(--ring) }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px }
+
+
+.nav{ display:flex; gap:14px; align-items:center }
+.btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius: 12px; background: var(--accent); color: white; border: none; font-weight: 600 }
+.btn.secondary{ background: var(--card); color: var(--fg); border:1px solid var(--ring) }
+
+
+.grid{ display:grid; gap: 20px; grid-template-columns: repeat(12, 1fr) }
+.hero{ grid-column: 1 / -1; background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 35%, transparent), transparent 60%); border: 1px solid var(--ring); border-radius: var(--radius); padding: 24px }
+
+
+.projects{ margin: 24px 0 }
+.card{ background: var(--card); border: 1px solid var(--ring); border-radius: var(--radius); overflow: clip }
+.card-inner{ display:grid; grid-template-columns: 1.2fr 1fr; gap: 0; }
+.card-body{ padding: 16px 18px }
+.card h3{ margin: 0 0 6px; font-size: 20px }
+.tags{ display:flex; flex-wrap: wrap; gap:6px; margin-top: 10px }
+.tag{ font-size: 12px; padding: 6px 10px; background: color-mix(in oklab, var(--accent) 12%, var(--card)); color: var(--fg); border:1px solid var(--ring); border-radius: 999px }
+.meta{ color: var(--muted); font-size: 14px }
+
+
+.video{ position: relative; width: 100%; aspect-ratio: 16/9; background:#000 }
+.video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0 }
+
+
+.footer{ margin: 40px 0 20px; color: var(--muted); font-size: 14px }
+
+
+@media (max-width: 900px){
+.card-inner{ grid-template-columns: 1fr }
+}
+</style>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Person",
+"name": "Nicola Fantino",
+"url": "",
+"jobTitle": "CG/VR Developer",
+"sameAs": [
+"https://github.com/nicolafantino",
+"https://www.linkedin.com/"
+]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="grid hero">
+<div>
+<div class="title">Nicola Fantino</div>
+<div class="subtitle">Computer Graphics • VR • Game Dev</div>
+<div class="chips">
+<span class="chip">🎓 MSc Cinema & Media Engineering (PoliTo)</span>
+<span class="chip">🕶️ VR Training • Unity/Unreal</span>
+<span class="chip">🧰 Blender • C# • C++</span>
+</div>
+</div>
+<nav class="nav">
+<a class="btn" href="mailto:you@example.com">Contattami</a>
+<a class="btn secondary" href="#projects">Progetti</a>
+</nav>
+</header>
+
+
+<section id="about" class="grid">
+<div class="card" style="grid-column: 1 / -1;">
+<div class="card-body">
+<p>
+</html>
