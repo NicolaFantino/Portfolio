@@ -87,22 +87,90 @@ const hasExternalLink = Boolean(project.link);
               ))}
             </ul>
           </section>
-
+           {/*image that can be clicked, aka a button, to show it enlarged*/}
           {hasImages && (
             <section class="space-y-4">
               <h2 class="text-2xl font-semibold">Gallery</h2>
               <div class="grid gap-6 sm:grid-cols-2">
                 {project.images?.map((image, index) => (
                   <figure class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-gray-50">
-                    <img
-                      src={image}
-                      alt={`${project.name} screenshot ${index + 1}`}
-                      class="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                     <button
+                      type="button"
+                      class="block w-full focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40"
+                      data-image={image}
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.name} screenshot ${index + 1}`}
+                        class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                        loading="lazy"
+                      />
+                    </button>
                   </figure>
                 ))}
               </div>
+
+              {/*Dialog that show the image enlarged*/}
+              <dialog
+                id="image-dialog"
+                class="m-0 p-0 w-screen h-screen max-w-none bg-transparent
+                      open:flex open:items-center open:justify-center
+                      backdrop:bg-black/80"
+              >
+                <div class="relative max-w-[95vw] max-h-[95vh]">
+                  <button
+                    type="button"
+                    id="dialog-close"
+                    class="absolute right-4 top-4 rounded-full bg-black/70 text-white px-3 py-1 text-sm font-medium"
+                  >
+                    Close
+                  </button>
+                  <img
+                    id="dialog-image"
+                    src=""
+                    alt="Project screenshot enlarged"
+                    class="block max-w-[95vw] max-h-[90vh] object-contain"
+                  />
+                </div>
+              </dialog>
+              
+             {/*Script for enlarge and close images of the gallery*/}
+              <script>
+                const dialog = document.getElementById("image-dialog");
+                const dialogImage = document.getElementById("dialog-image");
+                const closeButton = document.getElementById("dialog-close");
+
+                if (
+                  dialog instanceof HTMLDialogElement &&
+                  dialogImage instanceof HTMLImageElement &&
+                  closeButton instanceof HTMLButtonElement
+                ) {
+                  // open
+                  document.querySelectorAll("[data-image]").forEach((el) => {
+                    if (!(el instanceof HTMLButtonElement)) return;
+                    el.addEventListener("click", () => {
+                      const src = el.dataset.image;
+                      if (!src) return;
+                      dialogImage.src = src;
+                      document.documentElement.style.overflow = "hidden"; // lock scroll
+                      dialog.showModal();
+                    });
+                  });
+
+                  // close
+                  const close = () => {
+                    dialog.close();
+                    document.documentElement.style.overflow = ""; // restore scroll
+                  };
+                  closeButton.addEventListener("click", close);
+                  dialog.addEventListener("cancel", (e) => { e.preventDefault(); close(); });
+
+                  // click on backdrop closes
+                  dialog.addEventListener("click", (e) => {
+                    if (e.target === dialog) close();
+                  });
+                }
+              </script>
             </section>
           )}
 
