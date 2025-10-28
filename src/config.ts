@@ -69,14 +69,13 @@ export const siteConfig: SiteConfig = {
       description:
         "3D environment created with Blender and Substance Painter. I modeled the exterior and some assets for the interior rooms. The project is also accompanied by an OpenGL application where it is possible to play Gomoku in local multiplayer.",
       skills: ["Blender 3D Modeling", "Substance Painter", "OpenGL"],
-      youtubeId: "dQw4w9WgXcQ",
       link: "https://ficsy.itch.io/gomokuopengl",
       images: [
-        "/images/TotaleGiardinoCorretto.png",
-        "/images/DettaglioFontana1.png",
-        "/images/Render1.png",
-        "/images/Render2.png",
-        "/images/Render3.png",
+        "/Portfolio//images/TotaleGiardinoCorretto.png",
+        "/Portfolio//images/DettaglioFontana1.png",
+        "/Portfolio//images/Render1.png",
+        "/Portfolio//images/Render2.png",
+        "/Portfolio//images/Render3.png",
       ],
     },
     {
