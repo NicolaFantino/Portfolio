@@ -56,12 +56,12 @@ export const siteConfig: SiteConfig = {
   skills: ["C#", "C", "Java", "React", "Javascript", "Kotlin", "SQL", "Unity", "Unreal Engine", "Git", "Blender","Substance Painter"],
   projects: [
     {
-      slug: "ai-dev-roundup",
-      name: "AI Dev Roundup Newsletter",
+      slug: "civitas-mortis",
+      name: "Civitas Mortis",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      skills: ["React", "Node.js", "AWS"],
-      link: "https://aidevroundup.com/?ref=devportfolio",
+        "Prototype of a videogame developed in Unreal Engine 5, where I was tasked with creating the AI and VFX for the final boss.",
+      skills: ["Unreal Engine 5", "Blueprints"],
+      youtubeId: "6sMVLN6cSj"
     },
     {
       slug: "chrome-extension-mastery",
