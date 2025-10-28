@@ -1,0 +1,129 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  return siteConfig.projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const project = siteConfig.projects.find((item) => item.slug === slug);
+
+if (!project) {
+  throw Astro.redirect(`${import.meta.env.BASE_URL}404`);
+}
+
+const pageTitle = `${project.name} – ${siteConfig.name}`;
+const hasImages = Array.isArray(project.images) && project.images.length > 0;
+const hasVideo = Boolean(project.youtubeId);
+const hasExternalLink = Boolean(project.link);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={project.description} />
+  </head>
+  <body class="bg-white text-gray-900">
+    <Header />
+    <main class="min-h-screen">
+      <section class="px-6 sm:px-10 md:px-16 lg:px-24 py-16 sm:py-20 md:py-24">
+        <div class="max-w-5xl mx-auto space-y-12">
+          <header class="space-y-4">
+            <span
+              class="text-sm font-mono uppercase tracking-[0.3em]"
+              style={{ color: siteConfig.accentColor }}
+            >
+              Project
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">
+              {project.name}
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              {project.description}
+            </p>
+            {hasExternalLink && (
+              <a
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white shadow-md transition-colors"
+                style={{ backgroundColor: siteConfig.accentColor }}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </a>
+            )}
+          </header>
+
+          <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Skills & Technologies</h2>
+            <ul class="flex flex-wrap gap-2">
+              {project.skills.map((skill) => (
+                <li class="px-3 py-1 rounded-lg bg-gray-900 text-white text-sm">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {hasImages && (
+            <section class="space-y-4">
+              <h2 class="text-2xl font-semibold">Gallery</h2>
+              <div class="grid gap-6 sm:grid-cols-2">
+                {project.images?.map((image, index) => (
+                  <figure class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-gray-50">
+                    <img
+                      src={image}
+                      alt={`${project.name} screenshot ${index + 1}`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {hasVideo && (
+            <section class="space-y-4">
+              <h2 class="text-2xl font-semibold">Video walkthrough</h2>
+              <div class="aspect-video w-full overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                  title={`${project.name} demo video`}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="w-full h-full"
+                />
+              </div>
+            </section>
+          )}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
