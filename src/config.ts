@@ -52,9 +52,17 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com/RyanFitzgerald",
   },
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
+    "I am a recent graduate with a Master’s degree in Cinema and Media Engineering from the Polytechnic University of Turin. I am eager to further develop my expertise in computer graphics by pursuing roles such as Technical Artist, Graphics Programmer, Gameplay Programmer, 3D Animator, or similar positions.",
   skills: ["C#", "C", "Java", "React", "Javascript", "Kotlin", "SQL", "Unity", "Unreal Engine", "Git", "Blender","Substance Painter"],
   projects: [
+    {
+      slug: "virtual-reality-training-system",
+      name: "Multiplayer Virtual Reality Training System for an industrial 3D printer",
+      description:
+        "Prototype of a videogame developed in Unreal Engine 5, where I was tasked with creating the AI and VFX for the final boss.",
+      skills: ["Unreal Engine 5", "Blueprints"],
+      youtubeId: "6sMVLN6cSjI"
+    },
     {
       slug: "civitas-mortis",
       name: "Civitas Mortis",
@@ -79,13 +87,39 @@ export const siteConfig: SiteConfig = {
       ],
     },
     {
-      slug: "extension-kit",
-      name: "ExtensionKit",
+      slug: "sci-fi-city-compositing",
+      name: "Sci-fi city compositing",
       description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      skills: ["React", "Node.js", "AWS"],
+        "Compositing of live footage with a 3D environment. I handled the camera tracking and the animation of the foreground elements.",
+      skills: ["Da Vinci Resolve", "Blender 3D Animation"],
+      youtubeId: "0wVfc3fsuQ4",
+    },
+    {
+      slug: "flatville-spot-remake",
+      name: "Flatville spot remake",
+      description:
+        "Animation exercise consisting of recreating the Flatville commercial. The video contains all the scenes animated by me.",
+      skills: ["Blender 3D Animation"],
+      youtubeId: "G5f_IlZyL2c",
+    },
+    {
+      slug: "aware",
+      name: "Aware",
+      description:
+        "Unity real-time application where I was tasked with implementing the Microsoft Rocketbox Avatar library, sound effects, managing lighting, and modelling part of the 3D assets.",
+      skills: ["Unity", "C#", "Blender 3D Modeling"],
+      link: "https://fabrizio-sulpizio.itch.io/aware",
+    },
+    {
+      slug: "city-alley-environment",
+      name: "City alley environment",
+      description:
+        "3D environment created with Blender and Substance Painter.",
+      skills: ["Blender 3D Modeling", "Substance Painter"],
       images: [
-        "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80",
+        "/Portfolio//images/RenderFrontale.png",
+        "/Portfolio//images/RenderIngressoTradizionale_senzariflesso.png",
+        "/Portfolio//images/Sgabello+Portaombrelli_colornoritaglio.jpg",
       ],
     },
   ],
