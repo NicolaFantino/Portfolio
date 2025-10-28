@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
       description:
         "Prototype of a videogame developed in Unreal Engine 5, where I was tasked with creating the AI and VFX for the final boss.",
       skills: ["Unreal Engine 5", "Blueprints"],
-      youtubeId: "6sMVLN6cSj"
+      youtubeId: "6sMVLN6cSjI"
     },
     {
       slug: "chrome-extension-mastery",
