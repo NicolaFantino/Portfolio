@@ -1,4 +1,46 @@
-export const siteConfig = {
+export type Project = {
+  slug: string;
+  name: string;
+  description: string;
+  skills: string[];
+  link?: string;
+  images?: string[];
+  youtubeId?: string;
+};
+
+type Experience = {
+  company: string;
+  title: string;
+  dateRange: string;
+  bullets: string[];
+};
+
+type Education = {
+  school: string;
+  degree: string;
+  dateRange: string;
+  achievements: string[];
+};
+
+type SiteConfig = {
+  name: string;
+  title: string;
+  description: string;
+  accentColor: string;
+  social: {
+    email: string;
+    linkedin: string;
+    twitter: string;
+    github: string;
+  };
+  aboutMe: string;
+  skills: string[];
+  projects: Project[];
+  experience: Experience[];
+  education: Education[];
+};
+
+export const siteConfig: SiteConfig = {
   name: "Nicola Fantino",
   title: "Digital Media Engineer",
   description: "Portfolio website of Nicola Fantino",
@@ -14,25 +56,30 @@ export const siteConfig = {
   skills: ["C#", "C", "Java", "React", "Javascript", "Kotlin", "SQL", "Unity", "Unreal Engine", "Git", "Blender","Substance Painter"],
   projects: [
     {
+      slug: "ai-dev-roundup",
       name: "AI Dev Roundup Newsletter",
       description:
         "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
       skills: ["React", "Node.js", "AWS"],
+      link: "https://aidevroundup.com/?ref=devportfolio",
     },
     {
+      slug: "chrome-extension-mastery",
       name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
       description:
         "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
       skills: ["React", "Node.js", "AWS"],
+      youtubeId: "dQw4w9WgXcQ",
     },
     {
+      slug: "extension-kit",
       name: "ExtensionKit",
       description:
         "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
       skills: ["React", "Node.js", "AWS"],
+      images: [
+        "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80",
+      ],
     },
   ],
   experience: [
