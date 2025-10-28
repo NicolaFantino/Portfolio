@@ -46,10 +46,10 @@ export const siteConfig: SiteConfig = {
   description: "Portfolio website of Nicola Fantino",
   accentColor: "#1d4ed8",
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
+    email: "Nicola.Fantino@outlook.com",
+    linkedin: "https://www.linkedin.com/in/nicola-fantino/",
     twitter: "",
-    github: "https://github.com/RyanFitzgerald",
+    github: "https://github.com/NicolaFantino",
   },
   aboutMe:
     "I am a recent graduate with a Master’s degree in Cinema and Media Engineering from the Polytechnic University of Turin. I am eager to further develop my expertise in computer graphics by pursuing roles such as Technical Artist, Graphics Programmer, Gameplay Programmer, 3D Animator, or similar positions.",
