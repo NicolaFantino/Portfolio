@@ -64,12 +64,20 @@ export const siteConfig: SiteConfig = {
       youtubeId: "6sMVLN6cSjI"
     },
     {
-      slug: "chrome-extension-mastery",
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
+      slug: "japanese-traditional-house",
+      name: "Japanese traditional house",
       description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      skills: ["React", "Node.js", "AWS"],
+        "3D environment created with Blender and Substance Painter. I modeled the exterior and some assets for the interior rooms. The project is also accompanied by an OpenGL application where it is possible to play Gomoku in local multiplayer.",
+      skills: ["Blender 3D Modeling", "Substance Painter", "OpenGL"],
       youtubeId: "dQw4w9WgXcQ",
+      link: "https://ficsy.itch.io/gomokuopengl",
+      images: [
+        "/images/TotaleGiardinoCorretto.png",
+        "/images/DettaglioFontana1.png",
+        "/images/Render1.png",
+        "/images/Render2.png",
+        "/images/Render3.png",
+      ],
     },
     {
       slug: "extension-kit",
