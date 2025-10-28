@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
   social: {
     email: "your-email@example.com",
     linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
+    twitter: "",
     github: "https://github.com/RyanFitzgerald",
   },
   aboutMe:
@@ -90,6 +90,7 @@ export const siteConfig: SiteConfig = {
     },
   ],
   experience: [
+    /*
     {
       company: "Tech Company",
       title: "Senior Software Engineer",
@@ -119,9 +120,9 @@ export const siteConfig: SiteConfig = {
         "Improved site performance scores by 35% on average",
         "Introduced modern JavaScript frameworks to legacy codebases",
       ],
-    },
+    },*/
   ],
-  education: [
+  education: [/*
     {
       school: "University Name",
       degree: "Bachelor of Science in Computer Science",
@@ -141,6 +142,6 @@ export const siteConfig: SiteConfig = {
         "Built 10+ portfolio projects",
         "Specialized in React and Node.js",
       ],
-    },
+    },*/
   ],
 };
