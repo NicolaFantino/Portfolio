@@ -59,9 +59,9 @@ export const siteConfig: SiteConfig = {
       slug: "virtual-reality-training-system",
       name: "Multiplayer Virtual Reality Training System for an industrial 3D printer",
       description:
-        "Prototype of a videogame developed in Unreal Engine 5, where I was tasked with creating the AI and VFX for the final boss.",
-      skills: ["Unreal Engine 5", "Blueprints"],
-      youtubeId: "6sMVLN6cSjI"
+        "Master’s thesis project carried out at SynArea Consultants. The system was implemented starting from the VR Multiplayer Template, employing Netcode for GameObjects for data synchronization and the XR Interaction Toolkit for managing immersive interactions.The core of the system lies in a modular architecture structured around procedures divided into sequential steps, which can be executed in two distinct modes: a guided mode, featuring visual aids that assist the user step by step, and an evaluation mode, aimed at assessing the trainee’s level of learning and autonomy. Furthermore, multiple users can launch and perform different procedures simultaneously, fostering collaboration and enabling participants to support each other during the execution. The virtual environment was developed with a strong emphasis on performance optimization for standalone headsets such as the Oculus Quest 2.",
+      skills: ["Unity", "C#","Netcode for Gameobjects","XR Interaction Toolkit"],
+      youtubeId: "D3kJmbJioKc"
     },
     {
       slug: "civitas-mortis",
